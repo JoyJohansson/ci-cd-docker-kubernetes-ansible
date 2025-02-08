@@ -94,14 +94,6 @@ Under utvecklingen av en CI/CD-lösning för att bygga och deploya en Nginx-appl
 -  Genomförde en korrekt rebase av *feature/ansible-task* med `git rebase main`.
 - Hanterade merge-konflikter och pushade ändringarna säkert.
 
-**Lärdomar**
-- Alltid dubbelkolla att du är på rätt branch innan en `git rebase`.
-- `git reflog` är ett kraftfullt verktyg för att återskapa förlorade commits.
-- `git reset --hard` kan återställa en branch till ett tidigare tillstånd.
-- Rebase är kraftfullt men kräver noggrannhet.
-
-
-
 ## Diskussion om Tester
 
 Olika testmetoder övervägdes:
