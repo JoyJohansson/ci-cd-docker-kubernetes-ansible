@@ -82,6 +82,26 @@ Under utvecklingen av en CI/CD-lösning för att bygga och deploya en Nginx-appl
 - Ändrade Ansible-playbooken för att använda lokal anslutning (*connection: local*).
 - Verifierade syntaxen innan körning med `ansible-playbook --syntax-check`.
 
+## 7. Felaktig rebase och förlorade ändringar
+
+**Orsak:**
+- Felaktig rebase av *main* på *feature/ansible-task* istället för tvärtom.
+- Detta resulterade i att alla ändringar i *feature/ansible-task* verkade försvinna.
+
+**Lösning:**
+- Använde `git reflog` för att identifiera den senaste fungerande commit:en.
+- Återställde branchen med `git reset --hard <commit-hash>`.
+-  Genomförde en korrekt rebase av *feature/ansible-task* med `git rebase main`.
+- Hanterade merge-konflikter och pushade ändringarna säkert.
+
+**Lärdomar**
+- Alltid dubbelkolla att du är på rätt branch innan en `git rebase`.
+- `git reflog` är ett kraftfullt verktyg för att återskapa förlorade commits.
+- `git reset --hard` kan återställa en branch till ett tidigare tillstånd.
+- Rebase är kraftfullt men kräver noggrannhet.
+
+
+
 ## Diskussion om Tester
 
 Olika testmetoder övervägdes:
