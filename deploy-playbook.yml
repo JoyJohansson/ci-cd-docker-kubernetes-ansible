@@ -62,4 +62,3 @@
     - name: Debug New Image
       debug:
         msg: "Deployment is now running image {{ new_image.stdout }}"
-
